@@ -1,0 +1,7 @@
+{% extends 'base.html'%} {% block content %}
+<div class="row">
+    {% for clo in clothes %}
+        <h2>{{clo.title}}</h2>
+    {% endfor %}
+</div>
+{% endblock %}
