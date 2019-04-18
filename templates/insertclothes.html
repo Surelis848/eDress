@@ -3,15 +3,15 @@
     <form action="{{ url_for('insert_clothes') }}" method="POST">
         <fieldset>
             <h2>Add A Piece To Your Wardrobe</h2>
-            <div class="form-group">
+            <div class="form-group" name="username">
                 <label>Username</label>
                 <input type="text" class="form-control" placeholder="Username">
             </div>
-            <div class="form-group">
+            <div class="form-group" name="title">
                 <label>Title</label>
                 <input type="text" class="form-control" placeholder="Title">
             </div>
-            <div class="form-group">
+            <div class="form-group" name="type">
                 <label>Type</label>
                 <select class="form-control">
         <option class="disabled selected">Choose type</option>
@@ -31,7 +31,7 @@
         <option>Coat</option>
       </select>
             </div>
-            <div class="form-group">
+            <div class="form-group" name="condition">
                 <label>Condition</label>
                 <select multiple="" class="form-control">
         <option>New</option>
@@ -42,7 +42,7 @@
         <option>Poor</option>
       </select>
             </div>
-            <div class="form-group">
+            <div class="form-group" name="size">
                 <label>Size</label>
                 <select class="form-control">
         <option class="disabled selected">Choose size</option>
@@ -55,15 +55,15 @@
         <option>XXXL</option>
         </select>
             </div>
-            <div class="form-group">
+            <div class="form-group" name="brand">
                 <label>Brand</label>
                 <textarea class="form-control" rows="1" placeholder="Insert Brand"></textarea>
             </div>
-            <div class="form-group">
+            <div class="form-group" name="composition">
                 <label>Composition</label>
                 <textarea class="form-control" rows="1" placeholder='Put in composition of your piece'></textarea>
             </div>
-            <div class="form-group">
+            <div class="form-group" name="color">
                 <label>Color</label>
                 <select class="form-control">
         <option class="disabled selected">Choose color</option>
@@ -82,7 +82,7 @@
         <option>Other</option>
       </select>
             </div>
-            <fieldset class="form-group">
+            <fieldset class="form-group" name="season">
                 <label>Season</label>
                 <div class="form-check">
                     <label class="form-check-label">
@@ -115,11 +115,11 @@
         </label>
                 </div>
             </fieldset>
-            <div class="form-group">
+            <div class="form-group" name="description">
                 <label>Description</label>
                 <textarea class="form-control" rows="4" placeholder='Tell about any defects this piece has...'></textarea>
             </div>
-            <div class="form-group">
+            <div class="form-group" name="picture">
                 <label for="exampleInputFile">File input</label>
                 <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
                 <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
