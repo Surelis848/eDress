@@ -1,7 +1,15 @@
 {% extends 'base.html'%} {% block content %}
 <div class="row">
     {% for clo in clothes %}
-        <h2>{{clo.title}}</h2>
+    <div class="card border-secondary mb-3 accordion" style="max-width: 20rem;">
+        <div class="card-header">
+            <h2></h2>
+        </div>
+        <div class="card-body">
+            <button class="btn btn-link card-title" type="button" data-toggle="collapse" data-target="#collapsedes">{{clo.title}}</button>
+            <p id="collapsedes" class="card-text collapse show">{{clo.description}}</p>
+        </div>
+    </div>
     {% endfor %}
 </div>
 {% endblock %}

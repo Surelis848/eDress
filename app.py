@@ -13,6 +13,18 @@ mongo = PyMongo(app)
 def get_clothes():
     return render_template("getclothes.html", clothes=mongo.db.clothes.find())
     
+@app.route('/add_clothes')
+def add_clothes():
+    return render_template("insertclothes.html",
+                           profiles=mongo.db.profiles.find())
+
+
+@app.route('/insert_clothes', methods=['POST'])
+def insert_clothes():
+    clothes =  mongo.db.clothes
+    clothes.insert_one(request.form.to_dict())
+    return redirect(url_for('get_clothes'))
+    
 if __name__ == "__main__":
     app.run(host=os.environ.get('IP'),
         port=int(os.environ.get('PORT')),
