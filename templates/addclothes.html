@@ -3,17 +3,17 @@
     <form action="{{ url_for('insert_clothes') }}" method="POST" class="col-sm-12">
         <fieldset>
             <h2>Add A Piece To Your Wardrobe</h2>
-            <div class="form-group" name="username">
+            <div class="form-group">
                 <label>Username</label>
-                <input type="text" class="form-control" placeholder="Username">
+                <input type="text" name="username" class="form-control" placeholder="Username">
             </div>
-            <div class="form-group" name="title">
+            <div class="form-group">
                 <label>Title</label>
-                <input type="text" class="form-control" placeholder="Title">
+                <input type="text" name="title" class="form-control" placeholder="Title">
             </div>
-            <div class="form-group" name="type">
+            <div class="form-group">
                 <label>Type</label>
-                <select class="form-control">
+                <select class="form-control" name="type">
         <option class="disabled selected">Choose type</option>
         <option>T-shirt</option>
         <option>Shirt</option>
@@ -31,9 +31,9 @@
         <option>Coat</option>
       </select>
             </div>
-            <div class="form-group" name="condition">
+            <div class="form-group">
                 <label>Condition</label>
-                <select multiple="" class="form-control">
+                <select multiple="" class="form-control" name="condition">
         <option>New</option>
         <option>Very Good</option>
         <option>Good</option>
@@ -42,9 +42,9 @@
         <option>Poor</option>
       </select>
             </div>
-            <div class="form-group" name="size">
+            <div class="form-group">
                 <label>Size</label>
-                <select class="form-control">
+                <select class="form-control" name="size">
         <option class="disabled selected">Choose size</option>
         <option>XS</option>
         <option>S</option>
@@ -56,17 +56,17 @@
         <option>Universal</option>
         </select>
             </div>
-            <div class="form-group" name="brand">
+            <div class="form-group">
                 <label>Brand</label>
-                <textarea class="form-control" rows="1" placeholder="Insert Brand"></textarea>
+                <textarea class="form-control" name="brand" rows="1" placeholder="Insert Brand"></textarea>
             </div>
-            <div class="form-group" name="composition">
+            <div class="form-group">
                 <label>Composition</label>
-                <textarea class="form-control" rows="1" placeholder='Put in composition of your piece'></textarea>
+                <textarea class="form-control" name="composition" rows="1" placeholder='Put in composition of your piece'></textarea>
             </div>
-            <div class="form-group" name="color">
+            <div class="form-group">
                 <label>Color</label>
-                <select class="form-control">
+                <select class="form-control" name="color">
         <option class="disabled selected">Choose color</option>
         <option>Black</option>
         <option>White</option>
@@ -116,18 +116,17 @@
         </label>
                 </div>
             </fieldset>
-            <div class="form-group" name="description">
+            <div class="form-group">
                 <label>Description</label>
-                <textarea class="form-control" rows="4" placeholder='Tell about any defects this piece has...'></textarea>
+                <textarea class="form-control" name="description" rows="4" placeholder='Tell about any defects this piece has...'></textarea>
             </div>
-            <div class="form-group" name="picture">
+            <div class="form-group">
                 <label for="exampleInputFile">File input</label>
-                <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                <input type="file" name="picture" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
                 <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
             </div>
-            </fieldset>
-            <button type="submit" class="btn btn-primary">Submit</button>
         </fieldset>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
 {% endblock %}
