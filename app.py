@@ -13,11 +13,13 @@ mongo = PyMongo(app)
 def get_clothes():
     return render_template("getclothes.html", clothes=mongo.db.clothes.find())
     
+@app.route('/get_about')
+def get_about():
+    return render_template("about.html")
+    
 @app.route('/add_clothes')
 def add_clothes():
-    return render_template("insertclothes.html",
-                           profiles=mongo.db.profiles.find())
-
+    return render_template("addclothes.html")
 
 @app.route('/insert_clothes', methods=['POST'])
 def insert_clothes():
