@@ -1,13 +1,17 @@
 {% extends 'base.html'%} {% block content %}
 <div class="row">
     {% for clo in clothes %}
-    <div class="card border-secondary mb-3 accordion" style="max-width: 20rem;">
+    <div class="card border-secondary mb-3" style="max-width: 20rem;">
         <div class="card-header">
-            <h2></h2>
+            <img class="card_image" src="{{clo.picture}}" placeholder="{{clo.title}}"></img>
         </div>
         <div class="card-body">
-            <button class="btn btn-link card-title" type="button" data-toggle="collapse" data-target="#collapsedes">{{clo.title}}</button>
-            <p id="collapsedes" class="card-text collapse show">{{clo.description}}</p>
+            <h2>
+                <button class="btn btn-link card-title" type="button" data-toggle="collapse" aria-expanded="false" data-target="#c{{clo._id}}" aria-controls="c{{clo._id}}">{{clo.title}}</button>
+            </h2>
+            <div id="c{{clo._id}}" class="collapse">
+                <p class="card-text">{{clo.description}}</p>
+            </div>
         </div>
     </div>
     {% endfor %}
