@@ -1,3 +1,11 @@
+/*-------------Nav and Footer-------------*/
 footer {
     padding: 10px;
+}
+
+/*-------------Home Page-------------*/
+
+.card_image {
+    height: 300px;
+    width: 200px;
 }
