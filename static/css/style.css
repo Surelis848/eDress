@@ -1,3 +1,9 @@
+/*-------------General-------------*/
+
+.container {
+    padding: 20px 50px;
+}
+
 /*-------------Nav and Footer-------------*/
 footer {
     padding: 10px;
@@ -6,6 +12,35 @@ footer {
 /*-------------Home Page-------------*/
 
 .card_image {
-    height: 300px;
-    width: 200px;
+    height: 250px;
+    width: 180px;
+}
+
+.edbtn {
+    height: 30px;
+    width: 30px;
+}
+
+/*-------------About Page-------------*/
+
+.background-image {
+    height: 100vh;
+    background: no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+
+.opaque-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
 }
