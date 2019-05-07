@@ -1,6 +1,7 @@
 import os
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
+from bson.objectid import ObjectId
 
 app = Flask(__name__)
 app.config['MONGO_DBNAME'] = 'eDress'
@@ -25,6 +26,28 @@ def add_clothes():
 def insert_clothes():
     clothes =  mongo.db.clothes
     clothes.insert_one(request.form.to_dict())
+    return redirect(url_for('get_clothes'))
+    
+@app.route('/edit_clothes/<clo_id>')
+def edit_clothes(clo_id):
+    the_clo =  mongo.db.clothes.find_one({"_id": ObjectId(clo_id)})
+    return render_template('editclothes.html', clothes=the_clo)
+    
+@app.route('/update_clothes/<clo_id>', methods=["POST"])
+def update_clothes(clo_id):
+    clothes = mongo.db.clothes
+    clothes.update( {'_id': ObjectId(clo_id)},
+    {
+        'username':request.form.get('username'),
+        'title':request.form.get('title'),
+        'type': request.form.get('type'),
+        'condition': request.form.get('condition'),
+        'composition':request.form.get('composition'),
+        'color':request.form.get('color'),
+        'season':request.form.get('season'),
+        'description':request.form.get('description'),
+        'picture':request.form.get('picture')
+    })
     return redirect(url_for('get_clothes'))
     
 if __name__ == "__main__":
