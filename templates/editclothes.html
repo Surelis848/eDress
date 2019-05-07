@@ -15,45 +15,45 @@
                 <label>Type</label>
                 <select class="form-control" name="type">
         <option class="disabled selected">Choose type</option>
-        <option>T-shirt</option>
-        <option>Shirt</option>
-        <option>Sweather</option>
-        <option>Jacket</option>
-        <option>Cardigan</option>
-        <option>Dress</option>
-        <option>Skirt</option>
-        <option>Pants</option>
-        <option>Shorts</option>
-        <option>Leggings</option>
-        <option>Jumpsuit</option>
-        <option>Romper</option>
-        <option>Sportswear</option>
-        <option>Coat</option>
+        <option {% if clothes.type == 'T-shirt' %} selected='selected' {% endif %}>T-shirt</option>
+        <option {% if clothes.type == 'Shirt' %} selected='selected' {% endif %}>Shirt</option>
+        <option {% if clothes.type == 'Sweater' %} selected='selected' {% endif %}>Sweater</option>
+        <option {% if clothes.type == 'Jacket' %} selected='selected' {% endif %}>Jacket</option>
+        <option {% if clothes.type == 'Cardigan' %} selected='selected' {% endif %}>Cardigan</option>
+        <option {% if clothes.type == 'Dress' %} selected='selected' {% endif %}>Dress</option>
+        <option {% if clothes.type == 'Skirt' %} selected='selected' {% endif %}>Skirt</option>
+        <option {% if clothes.type == 'Pants' %} selected='selected' {% endif %}>Pants</option>
+        <option {% if clothes.type == 'Shorts' %} selected='selected' {% endif %}>Shorts</option>
+        <option {% if clothes.type == 'Leggings' %} selected='selected' {% endif %}>Leggings</option>
+        <option {% if clothes.type == 'Jumpsuit' %} selected='selected' {% endif %}>Jumpsuit</option>
+        <option {% if clothes.type == 'Romper' %} selected='selected' {% endif %}>Romper</option>
+        <option {% if clothes.type == 'Sportswear' %} selected='selected' {% endif %}>Sportswear</option>
+        <option {% if clothes.type == 'Coat' %} selected='selected' {% endif %}>Coat</option>
       </select>
             </div>
             <div class="form-group">
                 <label>Condition</label>
                 <select multiple="" class="form-control" name="condition">
-        <option>New</option>
-        <option>Very Good</option>
-        <option>Good</option>
-        <option>Used</option>
-        <option>Acceptable</option>
-        <option>Poor</option>
+        <option {% if clothes.condition == 'New' %} selected='selected' {% endif %}>New</option>
+        <option {% if clothes.condition == 'Very Good' %} selected='selected' {% endif %}>Very Good</option>
+        <option {% if clothes.condition == 'Good' %} selected='selected' {% endif %}>Good</option>
+        <option {% if clothes.condition == 'Used' %} selected='selected' {% endif %}>Used</option>
+        <option {% if clothes.condition == 'Acceptable' %} selected='selected' {% endif %}>Acceptable</option>
+        <option {% if clothes.condition == 'Poor' %} selected='selected' {% endif %}>Poor</option>
       </select>
             </div>
             <div class="form-group">
                 <label>Size</label>
                 <select class="form-control" name="size">
         <option class="disabled selected">Choose size</option>
-        <option>XS</option>
-        <option>S</option>
-        <option>M</option>
-        <option>L</option>
-        <option>XL</option>
-        <option>XXL</option>
-        <option>XXXL</option>
-        <option>Universal</option>
+        <option {% if clothes.size == 'XS' %} selected='selected' {% endif %}>XS</option>
+        <option {% if clothes.size == 'S' %} selected='selected' {% endif %}>S</option>
+        <option {% if clothes.size == 'M' %} selected='selected' {% endif %}>M</option>
+        <option {% if clothes.size == 'L' %} selected='selected' {% endif %}>L</option>
+        <option {% if clothes.size == 'XL' %} selected='selected' {% endif %}>XL</option>
+        <option {% if clothes.size == 'XXL' %} selected='selected' {% endif %}>XXL</option>
+        <option {% if clothes.size == 'XXL' %} selected='selected' {% endif %}>XXXL</option>
+        <option {% if clothes.size == 'Universal' %} selected='selected' {% endif %}>Universal</option>
         </select>
             </div>
             <div class="form-group">
@@ -68,54 +68,21 @@
                 <label>Color</label>
                 <select class="form-control" name="color">
         <option class="disabled selected">Choose color</option>
-        <option>Black</option>
-        <option>White</option>
-        <option>Red</option>
-        <option>Bordo</option>
-        <option>Orange</option>
-        <option>Yellow</option>
-        <option>Green</option>
-        <option>Blue</option>
-        <option>Purple</option>
-        <option>Brown</option>
-        <option>Grey</option>
-        <option>Multicolor</option>
-        <option>Other</option>
+        <option {% if clothes.color == 'Black' %} selected='selected' {% endif %}>Black</option>
+        <option {% if clothes.color == 'White' %} selected='selected' {% endif %}>White</option>
+        <option {% if clothes.color == 'Red' %} selected='selected' {% endif %}>Red</option>
+        <option {% if clothes.color == 'Bordo' %} selected='selected' {% endif %}>Bordo</option>
+        <option {% if clothes.color == 'Orange' %} selected='selected' {% endif %}>Orange</option>
+        <option {% if clothes.color == 'Yellow' %} selected='selected' {% endif %}>Yellow</option>
+        <option {% if clothes.color == 'Green' %} selected='selected' {% endif %}>Green</option>
+        <option {% if clothes.color == 'Blue' %} selected='selected' {% endif %}>Blue</option>
+        <option {% if clothes.color == 'Purple' %} selected='selected' {% endif %}>Purple</option>
+        <option {% if clothes.color == 'Brown' %} selected='selected' {% endif %}>Brown</option>
+        <option {% if clothes.color == 'Grey' %} selected='selected' {% endif %}>Grey</option>
+        <option {% if clothes.color == 'Multicolor' %} selected='selected' {% endif %}>Multicolor</option>
+        <option {% if clothes.color == 'Other' %} selected='selected' {% endif %}>Other</option>
       </select>
             </div>
-            <fieldset class="form-group" name="season">
-                <label>Season</label>
-                <div class="form-check">
-                    <label class="form-check-label">
-          <input class="form-check-input" type="checkbox">
-          Spring
-        </label>
-                </div>
-                <div class="form-check">
-                    <label class="form-check-label">
-          <input class="form-check-input" type="checkbox">
-          Summer
-        </label>
-                </div>
-                <div class="form-check">
-                    <label class="form-check-label">
-          <input class="form-check-input" type="checkbox">
-          Autumn
-        </label>
-                </div>
-                <div class="form-check">
-                    <label class="form-check-label">
-          <input class="form-check-input" type="checkbox">
-          Winter
-        </label>
-                </div>
-                <div class="form-check">
-                    <label class="form-check-label">
-          <input class="form-check-input" type="checkbox">
-          N/A
-        </label>
-                </div>
-            </fieldset>
             <div class="form-group">
                 <label>Description</label>
                 <textarea class="form-control" name="description" rows="4" placeholder='Tell about any defects this piece has...'>{{clothes.description}}</textarea>
