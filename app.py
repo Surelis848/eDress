@@ -50,6 +50,11 @@ def update_clothes(clo_id):
     })
     return redirect(url_for('get_clothes'))
     
+@app.route('/delete_clothes/<clo_id>')
+def delete_clothes(clo_id):
+    mongo.db.clothes.remove({'_id': ObjectId(clo_id)})
+    return redirect(url_for('get_clothes'))
+    
 if __name__ == "__main__":
     app.run(host=os.environ.get('IP'),
         port=int(os.environ.get('PORT')),
