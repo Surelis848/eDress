@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for
+from flask import Flask, render_template, redirect, request, url_for, session
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
@@ -42,6 +42,8 @@ def update_clothes(clo_id):
         'title':request.form.get('title'),
         'type': request.form.get('type'),
         'condition': request.form.get('condition'),
+        'size':request.form.get('size'),
+        'brand':request.form.get('brand'),
         'composition':request.form.get('composition'),
         'color':request.form.get('color'),
         'season':request.form.get('season'),
