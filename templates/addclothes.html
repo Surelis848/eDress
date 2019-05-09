@@ -4,17 +4,17 @@
         <fieldset>
             <h2>Add A Piece To Your Wardrobe</h2>
             <div class="form-group">
-                <label>Username</label>
+                <label>Username</label> <!--auto generate -->
                 <input type="text" name="username" class="form-control" placeholder="Username">
             </div>
             <div class="form-group">
                 <label>Title</label>
-                <input type="text" name="title" class="form-control" placeholder="Title">
+                <input type="text" name="title" class="form-control" placeholder="Title" required>
             </div>
             <div class="form-group">
                 <label>Type</label>
                 <select class="form-control" name="type">
-        <option class="disabled selected">Choose type</option>
+        <option disabled selected required>Choose type</option>
         <option>T-shirt</option>
         <option>Shirt</option>
         <option>Sweater</option>
@@ -33,7 +33,7 @@
             </div>
             <div class="form-group">
                 <label>Condition</label>
-                <select multiple="" class="form-control" name="condition">
+                <select multiple="" class="form-control" name="condition" required>
         <option>New</option>
         <option>Very Good</option>
         <option>Good</option>
@@ -45,7 +45,7 @@
             <div class="form-group">
                 <label>Size</label>
                 <select class="form-control" name="size">
-        <option class="disabled selected">Choose size</option>
+        <option disabled selected required>Choose size</option>
         <option>XS</option>
         <option>S</option>
         <option>M</option>
@@ -67,7 +67,7 @@
             <div class="form-group">
                 <label>Color</label>
                 <select class="form-control" name="color">
-        <option class="disabled selected">Choose color</option>
+        <option disabled selected required>Choose color</option>
         <option>Black</option>
         <option>White</option>
         <option>Red</option>
@@ -83,21 +83,13 @@
         <option>Other</option>
       </select>
             </div>
-            <fieldset class="form-group" name="season">
-                <label>Season</label>
-                <div class="form-check">
-                    <label class="form-check-label">
-          <input class="form-check-input" type="checkbox">
-          Spring
-        </label>
-                </div>
             <div class="form-group">
                 <label>Description</label>
                 <textarea class="form-control" name="description" rows="4" placeholder='Tell about any defects this piece has...'></textarea>
             </div>
             <div class="form-group">
                 <label>Add the url link to your image</label>
-                <input type="url" class="form-control" name="picture" placeholder="image url">
+                <input type="url" class="form-control" name="picture" placeholder="image url" required>
             </div>
         </fieldset>
         <button type="submit" class="btn btn-primary">Submit</button>

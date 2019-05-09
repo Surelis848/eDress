@@ -5,16 +5,16 @@
             <h2>Edit Your Piece</h2>
             <div class="form-group">
                 <label>Username</label>
-                <input type="text" name="username" class="form-control" placeholder="Username" value="{{clothes.username}}">
+                <input type="text" name="username" class="form-control" placeholder="Username" value="{{clothes.username}}"> <!-- auto generate -->
             </div>
             <div class="form-group">
                 <label>Title</label>
-                <input type="text" name="title" class="form-control" placeholder="Title" value="{{clothes.title}}">
+                <input type="text" name="title" class="form-control" placeholder="Title" value="{{clothes.title}}" required>
             </div>
             <div class="form-group">
                 <label>Type</label>
                 <select class="form-control" name="type">
-        <option class="disabled selected">Choose type</option>
+        <option disabled selected required>Choose type</option>
         <option {% if clothes.type == 'T-shirt' %} selected='selected' {% endif %}>T-shirt</option>
         <option {% if clothes.type == 'Shirt' %} selected='selected' {% endif %}>Shirt</option>
         <option {% if clothes.type == 'Sweater' %} selected='selected' {% endif %}>Sweater</option>
@@ -45,7 +45,7 @@
             <div class="form-group">
                 <label>Size</label>
                 <select class="form-control" name="size">
-        <option class="disabled selected">Choose size</option>
+        <option disabled selected required>Choose size</option>
         <option {% if clothes.size == 'XS' %} selected='selected' {% endif %}>XS</option>
         <option {% if clothes.size == 'S' %} selected='selected' {% endif %}>S</option>
         <option {% if clothes.size == 'M' %} selected='selected' {% endif %}>M</option>
@@ -67,7 +67,7 @@
             <div class="form-group">
                 <label>Color</label>
                 <select class="form-control" name="color">
-        <option class="disabled selected">Choose color</option>
+        <option disabled selected required>Choose color</option>
         <option {% if clothes.color == 'Black' %} selected='selected' {% endif %}>Black</option>
         <option {% if clothes.color == 'White' %} selected='selected' {% endif %}>White</option>
         <option {% if clothes.color == 'Red' %} selected='selected' {% endif %}>Red</option>
@@ -89,7 +89,7 @@
             </div>
             <div class="form-group">
                 <label>Add the url link to your image</label>
-                <input type="url" class="form-control" name="picture" placeholder="image url" value="{{clothes.picture}}">
+                <input type="url" class="form-control" name="picture" placeholder="image url" value="{{clothes.picture}}" required>
             </div>
         </fieldset>
         <button type="submit" class="btn btn-primary">Submit</button>
