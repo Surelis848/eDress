@@ -1,19 +1,48 @@
 /*-------------General-------------*/
 
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 .container {
     padding: 20px 50px;
 }
 
+body {
+    padding-bottom: 90px;
+}
+
 /*-------------Nav and Footer-------------*/
+
 footer {
-    padding: 10px;
+    padding: 5px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 80px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.social-media a i {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    transition: background-color 0.35s ease-in-out;
+    -moz-transition: background-color 0.35s ease-in-out;
+    -webkit-transition: background-color 0.35s ease-in-out;
+    -o-transition: background-color 0.35s ease-in-out;
+}
+
+.social-media a i:hover {
+    color: grey;
 }
 
 /*-------------Home Page-------------*/
-
-body {
-    
-}
 
 .card_image {
     height: 250px;
@@ -48,11 +77,13 @@ body {
 }
 
 /*-------------Buttons-------------*/
+
 .totop {
     position: fixed;
     bottom: 10px;
     right: 20px;
 }
+
 .totop a {
     transition: all, 5s ease-out;
 }
@@ -62,5 +93,14 @@ body {
 @media (min-width: 1024px) {
     .form-center {
         padding: 20px 320px;
+    }
+}
+
+@media (min-width: 768px) {
+    footer {
+        height: 40px;
+    }
+    body {
+        padding-bottom: 50px;
     }
 }
