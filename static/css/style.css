@@ -11,6 +11,10 @@ footer {
 
 /*-------------Home Page-------------*/
 
+body {
+    
+}
+
 .card_image {
     height: 250px;
     width: 180px;
@@ -34,6 +38,7 @@ footer {
     align-items: center;
     position: relative;
     justify-content: center;
+    margin-bottom: 20px;
 }
 
 .opaque-overlay {
@@ -43,4 +48,14 @@ footer {
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.3);
+}
+
+/*-------------Buttons-------------*/
+.totop {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+}
+.totop a {
+    transition: all, 5s ease-out;
 }
