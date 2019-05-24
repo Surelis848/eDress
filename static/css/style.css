@@ -50,6 +50,12 @@ body {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
+/*-------------Add A Piece Page-------------*/
+
+.form-center {
+    padding: 20px 20px;
+}
+
 /*-------------Buttons-------------*/
 .totop {
     position: fixed;
@@ -58,4 +64,12 @@ body {
 }
 .totop a {
     transition: all, 5s ease-out;
+}
+
+/*-------------Media Querries-------------*/
+
+@media (min-width: 1024px) {
+    .form-center {
+        padding: 20px 320px;
+    }
 }
