@@ -1,30 +1,87 @@
 {% extends 'base.html'%} {% block content %}
-<div class="row clo-card">
-    {% for clo in clothes %}
-    <div class="card bg-light mb-3" style="width: 20rem;">
-        <div class="card-header">
-            <img class="card_image" src="{{clo.picture}}" placeholder="{{clo.title}}"></img>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card border-secondary mb-3 bg-light">
+            <div class="card-header">Filter the results</div>
+            <div class="card-body dropdown">
+                <button onclick="typeFunction()" class="dropbtn card-title">Type</button>
+                <div id="typeDropdown" class="dropdown-content card-text">
+                    <a href="#">T-shirt</a>
+                    <a href="#">Shirt</a>
+                    <a href="#">Sweater</a>
+                    <a href="#">Jacket</a>
+                    <a href="#">Cardigan</a>
+                    <a href="#">Dress</a>
+                    <a href="#">Skirt</a>
+                    <a href="#">Pants</a>
+                    <a href="#">Shorts</a>
+                    <a href="#">Leggings</a>
+                    <a href="#">Jumpsuit</a>
+                    <a href="#">Romper</a>
+                    <a href="#">Sportswear</a>
+                    <a href="#">Coat</a>
+                </div>
+            </div>
+            <div class="card-body dropdown">
+                <button onclick="sizeFunction()" class="dropbtn card-title">Size</button>
+                <div id="sizeDropdown" class="dropdown-content card-text">
+                    <a href="#">XS</a>
+                    <a href="#">S</a>
+                    <a href="#">M</a>
+                    <a href="#">L</a>
+                    <a href="#">XL</a>
+                    <a href="#">XXL</a>
+                    <a href="#">XXXL</a>
+                    <a href="#">Universal</a>
+                </div>
+            </div>
+            <div class="card-body dropdown">
+                <button onclick="colorFunction()" class="dropbtn card-title">Color</button>
+                <div id="colorDropdown" class="dropdown-content card-text">
+                    <a href="#">Black</a>
+                    <a href="#">White</a>
+                    <a href="#">Red</a>
+                    <a href="#">Bordo</a>
+                    <a href="#">Orange</a>
+                    <a href="#">Yellow</a>
+                    <a href="#">Green</a>
+                    <a href="#">Blue</a>
+                    <a href="#">Purple</a>
+                    <a href="#">Brown</a>
+                    <a href="#">Grey</a>
+                    <a href="#">Multicolor</a>
+                    <a href="#">Other</a>
+                </div>
         </div>
-        <div class="card-body">
-            <h2>
-                <div class="row">
-                    <div class="col-sm-8">
-                        <button class="btn btn-link card-title text-secondary" type="button" data-toggle="collapse" aria-expanded="false" data-target="#c{{clo._id}}" aria-controls="c{{clo._id}}"><i class="fas fa-angle-down"></i> {{clo.title}}</button>
-                    </div>
-                    <div class="col-sm-4">
-                        <a href="{{url_for('edit_clothes', clo_id=clo._id)}}" class="edbtn btn btn-info"><i class="fas fa-pencil-alt"></i></a>
-                        <a href="{{url_for('delete_clothes', clo_id=clo._id)}}" class="edbtn btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fas fa-trash-alt"></i></a>
+        <button class="btn" type="submit">Filter</button>
+        <a href="#" class="btn">Reset</a>
+        </div>
+        <div class="row">
+            {% for clo in clothes %}
+            <div class="card bg-light mb-3" style="width: 20rem;">
+                <div class="card-header">
+                    <img class="card_image" src="{{clo.picture}}" placeholder="{{clo.title}}"></img>
+                </div>
+                <div class="card-body">
+                    <h2>
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <button class="btn btn-link card-title text-secondary" type="button" data-toggle="collapse" aria-expanded="false" data-target="#c{{clo._id}}" aria-controls="c{{clo._id}}"><i class="fas fa-angle-down"></i> {{clo.title}}</button>
+                            </div>
+                            <div class="col-sm-4">
+                                <a href="{{url_for('edit_clothes', clo_id=clo._id)}}" class="edbtn btn btn-info"><i class="fas fa-pencil-alt"></i></a>
+                                <a href="{{url_for('delete_clothes', clo_id=clo._id)}}" class="edbtn btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fas fa-trash-alt"></i></a>
+                            </div>
+                        </div>
+                    </h2>
+                    <div id="c{{clo._id}}" class="collapse">
+                        <p class="card-text">{{clo.description}}</p>
                     </div>
                 </div>
-            </h2>
-            <div id="c{{clo._id}}" class="collapse">
-                <p class="card-text">{{clo.description}}</p>
             </div>
+            {% endfor %}
+            <p class="totop">
+                <a class='text-secondary' href="#top">Back to top</a>
+            </p>
         </div>
-    </div>
-    {% endfor %}
-    <p class="totop">
-        <a class='text-secondary' href="#top">Back to top</a>
-    </p>
-</div>
-{% endblock %}
+        {% endblock %}
