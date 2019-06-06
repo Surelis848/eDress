@@ -4,8 +4,13 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
 app = Flask(__name__)
-app.config['MONGO_DBNAME'] = 'eDress'
-app.config['MONGO_URI'] = 'mongodb+srv://surelis:rootUser@myfirstcluster-1cswe.mongodb.net/eDress?retryWrites=true'
+if "MONGO_DBNAME" in os.environ:
+    app.config["MONGO_DBNAME"] = os.getenv('MONGO_DBNAME')
+    app.config["MONGO_URI"] = os.getenv('MONGO_URI')
+else:
+    import config
+    app.config["MONGO_DBNAME"] = config.DB_CONFIG["MONGO_DBNAME"]
+    app.config["MONGO_URI"] = config.DB_CONFIG["MONGO_URI"]
 
 mongo = PyMongo(app)
 
