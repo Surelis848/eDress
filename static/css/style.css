@@ -64,7 +64,8 @@ footer {
 .background-image {
     background-image: url('/static/images/clothes.jpg');
     height: 100vh;
-    background: no-repeat center center fixed;
+    background-repeat: no-repeat;
+    background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
