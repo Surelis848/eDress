@@ -16,45 +16,26 @@
                 <label>Type</label>
                 <select class="form-control" name="type">
                     <option disabled selected required>Choose type</option>
-                    <option>T-shirt</option>
-                    <option>Shirt</option>
-                    <option>Sweater</option>
-                    <option>Jacket</option>
-                    <option>Cardigan</option>
-                    <option>Dress</option>
-                    <option>Skirt</option>
-                    <option>Pants</option>
-                    <option>Shorts</option>
-                    <option>Leggings</option>
-                    <option>Jumpsuit</option>
-                    <option>Romper</option>
-                    <option>Sportswear</option>
-                    <option>Coat</option>
+                    {% for t in types %}
+                        <option value="{{t.type}}">{{t.type}}</option>
+                    {% endfor %}
                 </select>
             </div>
             <div class="form-group">
                 <label>Condition</label>
                 <select multiple="" class="form-control" name="condition" required>
-                    <option>New</option>
-                    <option>Very Good</option>
-                    <option>Good</option>
-                    <option>Used</option>
-                    <option>Acceptable</option>
-                    <option>Poor</option>
+                    {% for c in conditions %}
+                        <option value="{{c.condition}}">{{c.condition}}</option>
+                    {% endfor %}
                 </select>
             </div>
             <div class="form-group">
                 <label>Size</label>
                 <select class="form-control" name="size">
                     <option disabled selected required>Choose size</option>
-                    <option>XS</option>
-                    <option>S</option>
-                    <option>M</option>
-                    <option>L</option>
-                    <option>XL</option>
-                    <option>XXL</option>
-                    <option>XXXL</option>
-                    <option>Universal</option>
+                    {% for s in sizes %}
+                        <option value="{{s.size}}">{{s.size}}</option>
+                    {% endfor %}
                 </select>
             </div>
             <div class="form-group">
@@ -69,19 +50,9 @@
                 <label>Color</label>
                 <select class="form-control" name="color">
                     <option disabled selected required>Choose color</option>
-                    <option>Black</option>
-                    <option>White</option>
-                    <option>Red</option>
-                    <option>Bordo</option>
-                    <option>Orange</option>
-                    <option>Yellow</option>
-                    <option>Green</option>
-                    <option>Blue</option>
-                    <option>Purple</option>
-                    <option>Brown</option>
-                    <option>Grey</option>
-                    <option>Multicolor</option>
-                    <option>Other</option>
+                    {% for c in colors %}
+                        <option value="{{c.color}}">{{c.color}}</option>
+                    {% endfor %}
                 </select>
             </div>
             <div class="form-group">

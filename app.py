@@ -25,7 +25,11 @@ def get_about():
     
 @app.route('/add_clothes')
 def add_clothes():
-    return render_template("addclothes.html")
+    return render_template("addclothes.html", 
+                                types=mongo.db.types.find(),
+                                conditions=mongo.db.conditions.find(),
+                                sizes=mongo.db.sizes.find(),
+                                colors=mongo.db.colors.find())
 
 @app.route('/insert_clothes', methods=['POST'])
 def insert_clothes():
@@ -36,7 +40,11 @@ def insert_clothes():
 @app.route('/edit_clothes/<clo_id>')
 def edit_clothes(clo_id):
     the_clo =  mongo.db.clothes.find_one({"_id": ObjectId(clo_id)})
-    return render_template('editclothes.html', clothes=the_clo)
+    return render_template('editclothes.html', clothes=the_clo,
+                                            types=mongo.db.types.find(),
+                                            conditions=mongo.db.conditions.find(),
+                                            sizes=mongo.db.sizes.find(),
+                                            colors=mongo.db.colors.find())
     
 @app.route('/update_clothes/<clo_id>', methods=["POST"])
 def update_clothes(clo_id):
