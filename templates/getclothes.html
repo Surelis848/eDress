@@ -6,55 +6,29 @@
             <div class="card-body dropdown">
                 <button onclick="typeFunction()" class="dropbtn card-title">Type</button>
                 <div id="typeDropdown" class="dropdown-content card-text">
-                    <a href="#">T-shirt</a>
-                    <a href="#">Shirt</a>
-                    <a href="#">Sweater</a>
-                    <a href="#">Jacket</a>
-                    <a href="#">Cardigan</a>
-                    <a href="#">Dress</a>
-                    <a href="#">Skirt</a>
-                    <a href="#">Pants</a>
-                    <a href="#">Shorts</a>
-                    <a href="#">Leggings</a>
-                    <a href="#">Jumpsuit</a>
-                    <a href="#">Romper</a>
-                    <a href="#">Sportswear</a>
-                    <a href="#">Coat</a>
+                    {% for t in types %}
+                        <a href="#" value="{{t.type}}">{{t.type}}</a>
+                    {% endfor %}
                 </div>
             </div>
             <div class="card-body dropdown">
                 <button onclick="sizeFunction()" class="dropbtn card-title">Size</button>
                 <div id="sizeDropdown" class="dropdown-content card-text">
-                    <a href="#">XS</a>
-                    <a href="#">S</a>
-                    <a href="#">M</a>
-                    <a href="#">L</a>
-                    <a href="#">XL</a>
-                    <a href="#">XXL</a>
-                    <a href="#">XXXL</a>
-                    <a href="#">Universal</a>
+                    {% for s in sizes %}
+                        <a href="#" value="{{s.size}}">{{s.size}}</a>
+                    {% endfor %}
                 </div>
             </div>
             <div class="card-body dropdown">
                 <button onclick="colorFunction()" class="dropbtn card-title">Color</button>
                 <div id="colorDropdown" class="dropdown-content card-text">
-                    <a href="#">Black</a>
-                    <a href="#">White</a>
-                    <a href="#">Red</a>
-                    <a href="#">Bordo</a>
-                    <a href="#">Orange</a>
-                    <a href="#">Yellow</a>
-                    <a href="#">Green</a>
-                    <a href="#">Blue</a>
-                    <a href="#">Purple</a>
-                    <a href="#">Brown</a>
-                    <a href="#">Grey</a>
-                    <a href="#">Multicolor</a>
-                    <a href="#">Other</a>
+                    {% for c in colors %}
+                        <a href="#" value="{{c.color}}">{{c.color}}</a>
+                    {% endfor %}
                 </div>
-        </div>
-        <button class="btn" type="submit">Filter</button>
-        <a href="#" class="btn">Reset</a>
+            </div>
+            <button class="btn" type="submit">Filter</button>
+            <a href="#" class="btn">Reset</a>
         </div>
         <div class="row">
             {% for clo in clothes %}

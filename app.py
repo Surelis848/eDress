@@ -17,7 +17,11 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/get_clothes')
 def get_clothes():
-    return render_template("getclothes.html", clothes=mongo.db.clothes.find())
+    return render_template("getclothes.html", 
+                                            clothes=mongo.db.clothes.find(),
+                                            types=mongo.db.types.find(),
+                                            sizes=mongo.db.sizes.find(),
+                                            colors=mongo.db.colors.find())
     
 @app.route('/get_about')
 def get_about():
