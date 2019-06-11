@@ -11,6 +11,7 @@ html {
 
 body {
     padding-bottom: 90px;
+    font-family: Arial, sans-serif;
 }
 
 /*-------------Nav and Footer-------------*/
@@ -83,16 +84,8 @@ footer {
     padding: 20px 20px;
 }
 
-/*-------------Buttons-------------*/
-
-.totop {
-    position: fixed;
-    bottom: 10px;
-    right: 20px;
-}
-
-.totop a {
-    transition: all, 5s ease-out;
+.btn-addclothes {
+    background-color: #f7babd;
 }
 
 /*-------------Media Querries-------------*/
@@ -116,29 +109,27 @@ footer {
 
 /* Dropdown Button */
 .dropbtn {
-  padding: 16px;
+  padding: 10px;
+  width: 90px;
   font-size: 16px;
+  position: relative;
+}
+
+.filterDiv {
+  float: left;
+  background-color: #2196F3;
+  color: #ffffff;
+  width: 100px;
+  line-height: 100px;
+  text-align: center;
+  margin: 2px;
+  display: none; /* Hidden by default */
 }
 
 /* Dropdown button on hover & focus */
 .dropbtn:hover, .dropbtn:focus {
   background-color: #3e8e41;
 }
-
-/* The search field */
-#myInput {
-  border-box: box-sizing;
-  background-image: url('searchicon.png');
-  background-position: 14px 12px;
-  background-repeat: no-repeat;
-  font-size: 16px;
-  padding: 14px 20px 12px 45px;
-  border: none;
-  border-bottom: 1px solid #ddd;
-}
-
-/* The search field when it gets focus/clicked on */
-#myInput:focus {outline: 3px solid #ddd;}
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
@@ -169,3 +160,75 @@ footer {
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
+
+/*-------------Log In-------------*/
+
+.login {
+margin: 20px auto;
+width: 300px;
+}
+.login-screen {
+background-color: #FFF;
+padding: 20px;
+border-radius: 5px
+}
+
+.app-title {
+text-align: center;
+color: #777;
+}
+
+.login-form {
+text-align: center;
+}
+.control-group {
+margin-bottom: 10px;
+}
+
+input {
+background-color: #ECF0F1;
+border: 2px solid transparent;
+border-radius: 3px;
+font-size: 16px;
+font-weight: 200;
+padding: 10px 0;
+width: 250px;
+transition: border .5s;
+}
+
+.control-group input {
+    text-align: center;
+}
+
+input:focus {
+border: 2px solid #78c2ad;
+box-shadow: none;
+}
+
+.btn-login {
+border: 2px solid transparent;
+background: #f7babd;
+color: #ffffff;
+font-size: 16px;
+line-height: 25px;
+padding: 10px 0;
+text-decoration: none;
+text-shadow: none;
+border-radius: 3px;
+box-shadow: none;
+transition: 0.25s;
+display: block;
+width: 250px;
+margin: 0 auto;
+}
+
+.btn:hover {
+background-color: #f3969a;
+}
+
+.login-link {
+font-size: 12px;
+color: #78c2ad;
+display: block;
+margin-top: 12px;
+}
