@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for, session
+from flask import Flask, render_template, redirect, request, url_for, session, flash, abort
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
@@ -15,6 +15,23 @@ else:
 mongo = PyMongo(app)
 
 @app.route('/')
+def home():
+    if not session.get('logged_in'):
+        return render_template('login.html')
+    else:
+        return render_template("getclothes.html", 
+                                            clothes=mongo.db.clothes.find(),
+                                            types=mongo.db.types.find(),
+                                            sizes=mongo.db.sizes.find(),
+                                            colors=mongo.db.colors.find())
+                                            
+@app.route('/login', methods=['POST'])
+def do_admin_login():
+    if request.form['password'] == 'password' and request.form['username'] == 'admin': session['logged_in'] = True
+    else:
+        flash('wrong password!')
+        return home()
+
 @app.route('/get_clothes')
 def get_clothes():
     return render_template("getclothes.html", 
