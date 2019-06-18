@@ -91,6 +91,10 @@ def delete_clothes(clo_id):
     mongo.db.clothes.remove({'_id': ObjectId(clo_id)})
     return redirect(url_for('get_clothes'))
     
+@app.route('/get_a_piece')
+def get_a_piece():
+    return render_template("apiece.html")
+    
 if __name__ == "__main__":
     app.run(host=os.environ.get('IP'),
         port=int(os.environ.get('PORT')),
