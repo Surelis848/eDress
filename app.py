@@ -1,7 +1,9 @@
 import os
+from datetime import datetime
 from flask import Flask, render_template, redirect, request, url_for, session, flash, abort
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+
 
 app = Flask(__name__)
 if "MONGO_DBNAME" in os.environ:
@@ -35,7 +37,7 @@ def do_admin_login():
 @app.route('/get_clothes')
 def get_clothes():
     return render_template("getclothes.html", 
-                                            clothes=mongo.db.clothes.find(),
+                                            clothes=mongo.db.clothes.find().sort('date', -1),
                                             types=mongo.db.types.find(),
                                             sizes=mongo.db.sizes.find(),
                                             colors=mongo.db.colors.find())
@@ -50,12 +52,26 @@ def add_clothes():
                                 types=mongo.db.types.find(),
                                 conditions=mongo.db.conditions.find(),
                                 sizes=mongo.db.sizes.find(),
-                                colors=mongo.db.colors.find())
-
+                                colors=mongo.db.colors.find()
+                                )
+    
 @app.route('/insert_clothes', methods=['POST'])
 def insert_clothes():
     clothes =  mongo.db.clothes
-    clothes.insert_one(request.form.to_dict())
+    add_item = {
+        'date':"{:%b, %d %Y}".format(datetime.now()),
+        'username':request.form.get('username'),
+        'title':request.form.get('title'),
+        'type': request.form.get('type'),
+        'condition': request.form.get('condition'),
+        'size':request.form.get('size'),
+        'brand':request.form.get('brand'),
+        'composition':request.form.get('composition'),
+        'color':request.form.get('color'),
+        'description':request.form.get('description'),
+        'picture':request.form.get('picture')
+    }
+    clothes.insert(add_item)
     return redirect(url_for('get_clothes'))
     
 @app.route('/edit_clothes/<clo_id>')
@@ -80,7 +96,6 @@ def update_clothes(clo_id):
         'brand':request.form.get('brand'),
         'composition':request.form.get('composition'),
         'color':request.form.get('color'),
-        'season':request.form.get('season'),
         'description':request.form.get('description'),
         'picture':request.form.get('picture')
     })
