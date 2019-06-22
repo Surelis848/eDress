@@ -3,6 +3,7 @@ from datetime import datetime
 from flask import Flask, render_template, redirect, request, url_for, session, flash, abort
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+import bcrypt
 
 
 app = Flask(__name__)
@@ -17,23 +18,32 @@ else:
 mongo = PyMongo(app)
 
 @app.route('/')
-def home():
-    if not session.get('logged_in'):
-        return render_template('login.html')
-    else:
-        return render_template("getclothes.html", 
-                                            clothes=mongo.db.clothes.find(),
-                                            types=mongo.db.types.find(),
-                                            sizes=mongo.db.sizes.find(),
-                                            colors=mongo.db.colors.find())
-                                            
-@app.route('/login', methods=['POST'])
-def do_admin_login():
-    if request.form['password'] == 'password' and request.form['username'] == 'admin': session['logged_in'] = True
-    else:
-        flash('wrong password!')
-        return home()
 
+@app.route('/login', methods=['POST', 'GET'])
+def login():
+    if request.method == 'POST':
+        users = mongo.db.users
+        login_user = users.find_one({'name': request.form['username']})
+        if login_user:
+            if bcrypt.hashpw(request.form['password'].encode('utf-8'), login_user['password'].encode('utf-8')) == login_user['password'].encode('utf-8'):
+                session['username'] = request.form['username']
+                return redirect(url_for('get_clothes'))
+        return 'Invalid username/password combination'
+    return render_template("login.html")
+        
+@app.route('/register', methods=['POST', 'GET'])
+def register():
+    if request.method == 'POST':
+        users = mongo.db.users
+        existing_user = users.find_one({'name': request.form['username']})
+        if existing_user is None:
+            hashpass = bcrypt.hashpw(request.form['password'].encode('utf-8'), bcrypt.gensalt())
+            users.insert({'name': request.form['username'], 'password' : hashpass})
+            session['username'] = request.form['username']
+            return redirect(url_for('get_clothes'))
+        return 'That username already exists!'
+    return render_template('register.html')
+    
 @app.route('/get_clothes')
 def get_clothes():
     return render_template("getclothes.html", 
@@ -41,6 +51,12 @@ def get_clothes():
                                             types=mongo.db.types.find(),
                                             sizes=mongo.db.sizes.find(),
                                             colors=mongo.db.colors.find())
+
+        
+@app.route("/logout")
+def logout():
+    session['logged_in'] = False
+    return render_template('')
     
 @app.route('/get_about')
 def get_about():
@@ -111,6 +127,7 @@ def get_a_piece():
     return render_template("apiece.html")
     
 if __name__ == "__main__":
-    app.run(host=os.environ.get('IP'),
+        app.secret_key = 'mysecret'
+        app.run(host=os.environ.get('IP'),
         port=int(os.environ.get('PORT')),
         debug=True)

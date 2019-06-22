@@ -1,11 +1,11 @@
 {% extends 'base.html'%} {% block content %}
 
 
-<form action="/login" method="POST">
+<form action="/register" method="POST">
     <div class="login">
         <div class="login-screen">
             <div class="app-title">
-                <h1>Login</h1>
+                <h1>Register</h1>
             </div>
             <div class="login-form">
                 <div class="control-group">
@@ -15,8 +15,7 @@
                     <input type="password" class="login-field" value="" placeholder="Password" name="password">
                     <label class="login-field-icon fui-lock" for="login-pass"></label>
                 </div>
-                <input type="submit" value="Log in" class="btn-login btn-primary btn-large btn-block">
-                <p>Don't have an account yet? <a href="{{url_for('register')}}">Sing In</a></p>
+                <input type="submit" value="Sign In" class="btn-login btn-primary btn-large btn-block">
             </div>
         </div>
     </div>
