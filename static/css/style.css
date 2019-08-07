@@ -11,7 +11,7 @@ html {
 
 body {
     padding-bottom: 90px;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 /*-------------Nav and Footer-------------*/
@@ -212,23 +212,20 @@ color: #ffffff;
 font-size: 16px;
 line-height: 25px;
 padding: 10px 0;
-text-decoration: none;
-text-shadow: none;
 border-radius: 3px;
-box-shadow: none;
 transition: 0.25s;
 display: block;
 width: 250px;
 margin: 0 auto;
 }
 
-.btn:hover {
+.btn-login:hover {
 background-color: #f3969a;
 }
 
 .login-link {
 font-size: 12px;
-color: #78c2ad;
+color: #f3969a;
 display: block;
 margin-top: 12px;
 }
