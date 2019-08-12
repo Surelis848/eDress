@@ -1,0 +1,27 @@
+{% extends 'base.html'%} {% block content %}
+
+<div class="row">
+    <div class="col-sm-12 col-md-6">
+        <h2>{{clothes.title}}</h2>
+        <img src="url_for({{clothes.picture}})">
+    </div>
+    <div class="col-sm-12 col-md-6">
+        <h3>Description:</h3>
+        <p>{{clothes.description}}</p>
+        <h3>Type:</h3>
+        <p>{{clothes.type}}</p>
+        <h3>Color:</h3>
+        <p>{{clothes.color}}</p>
+        <h3>Size:</h3>
+        <p>{{clothes.size}}</p>
+        <h3>Condition:</h3>
+        <p>{{clothes.condition}}</p>
+        <h3>Brand:</h3>
+        <p>{{clothes.brand}}</p>
+        <h3>Composition:</h3>
+        <p>{{clothes.composition}}</p>
+        
+    </div>
+</div>
+
+{% endblock %}

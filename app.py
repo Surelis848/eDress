@@ -122,12 +122,13 @@ def delete_clothes(clo_id):
     mongo.db.clothes.remove({'_id': ObjectId(clo_id)})
     return redirect(url_for('get_clothes'))
     
-@app.route('/get_a_piece')
-def get_a_piece():
-    return render_template("apiece.html")
+@app.route('/get_a_piece/<clo_id>')
+def get_a_piece(clo_id):
+    the_clo =  mongo.db.clothes.find_one({"_id": ObjectId(clo_id)})
+    return render_template("apiece.html", clothes=the_clo)
     
 if __name__ == "__main__":
-        app.secret_key = 'mysecret'
+        app.secret_key = 'mysecret',
         app.run(host=os.environ.get('IP'),
         port=int(os.environ.get('PORT')),
         debug=True)

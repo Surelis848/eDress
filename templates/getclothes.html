@@ -30,14 +30,53 @@
             </div>
         </div>
         <div class="col-sm-3">
-            <button class="btn" type="submit">Filter</button>
-            <a href="#" class="btn">Reset</a>
+            <button type="submit">Filter</button>
+            <button value="Refresh Page" onClick="window.location.reload();">Reset</button>
         </div>
     </div>
-</div>
+</div> 
+<!--<div class="card text-white bg-secondary mb-3">
+    <p class="card-header">Filter the results</p>
+    <div class="row">
+        <form action="#" method="POST">
+            <div class="col-sm-3">
+                <select class="form-control" name="type">
+                    <option disabled selected>Choose type</option>
+                    {% for t in types %}
+                        <option value="{{t.type}}" onclick="filterSelection('{{t.type}}')">{{t.type}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-sm-3">
+                <div class="card-body dropdown">
+                    <button onclick="sizeFunction()" class="dropbtn card-title">Size</button>
+                    <div id="sizeDropdown" class="dropdown-content card-text">
+                        {% for s in sizes %}
+                            <a href="#" value="{{s.size}}" onclick="filterSelection('{{s.size}}')">{{s.size}}</a> 
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card-body dropdown">
+                    <button onclick="colorFunction()" class="dropbtn card-title">Color</button>
+                    <div id="colorDropdown" class="dropdown-content card-text">
+                        {% for c in colors %}
+                            <a href="#" value="{{c.color}}" onclick="filterSelection('{{c.color}}')">{{c.color}}</a> 
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <button type="submit" onclick>Filter</button>
+                <button value="Refresh Page" onClick="window.location.reload();">Reset</button>
+            </div>
+        </form>
+    </div>
+</div> -->
 <div class="row">
     {% for clo in clothes %}
-    <div class="card bg-light mb-3 filterDiv {{clo.title}}" style="width: 20rem;">
+    <div class="card bg-light mb-3 filterDiv {{clo.type}} {{clo.size}} {{clo.color}}" style="width: 20rem;">
         <div class="card-header">
             <img class="card_image" src="{{clo.picture}}" placeholder="{{clo.title}}"></img>
         </div>
@@ -45,6 +84,7 @@
             <h2>
                 <div class="row">
                     <div class="col-sm-8">
+                        <a href="{{url_for('get_a_piece', clo_id=clo._id)}}" class="btn">{{clo.title}}</a>
                         <button class="btn btn-link card-title text-secondary" type="button" data-toggle="collapse" aria-expanded="false" data-target="#c{{clo._id}}" aria-controls="c{{clo._id}}"><i class="fas fa-angle-down"></i> {{clo.title}}</button>
                     </div>
                     <div class="col-sm-4">
