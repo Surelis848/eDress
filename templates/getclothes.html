@@ -2,7 +2,7 @@
 <div class="card border-secondary mb-3 bg-light">
     <div class="card-header">Filter the results</div>
     <div class="row">
-        <div class="col-sm-3">
+        <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="card-body dropdown">
                 <button onclick="typeFunction()" class="dropbtn card-title">Type</button>
                 <div id="typeDropdown" class="dropdown-content card-text">
@@ -11,7 +11,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-3">
+        <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="card-body dropdown">
                 <button onclick="sizeFunction()" class="dropbtn card-title">Size</button>
                 <div id="sizeDropdown" class="dropdown-content card-text">
@@ -20,7 +20,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-3">
+        <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="card-body dropdown">
                 <button onclick="colorFunction()" class="dropbtn card-title">Color</button>
                 <div id="colorDropdown" class="dropdown-content card-text">
@@ -29,12 +29,13 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-3">
-            <button type="submit">Filter</button>
-            <button value="Refresh Page" onClick="window.location.reload();">Reset</button>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="card-body dropdown">
+                <button class='reset-btn' value="Refresh Page" onClick="window.location.reload();">Reset</button>
+            </div>
         </div>
     </div>
-</div> 
+</div>
 <!--<div class="card text-white bg-secondary mb-3">
     <p class="card-header">Filter the results</p>
     <div class="row">
