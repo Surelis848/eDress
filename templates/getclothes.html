@@ -84,8 +84,7 @@
             <h2>
                 <div class="row">
                     <div class="col-sm-8">
-                        <a href="{{url_for('get_a_piece', clo_id=clo._id)}}" class="btn">{{clo.title}}</a>
-                        <button class="btn btn-link card-title text-secondary" type="button" data-toggle="collapse" aria-expanded="false" data-target="#c{{clo._id}}" aria-controls="c{{clo._id}}"><i class="fas fa-angle-down"></i> {{clo.title}}</button>
+                        <a href="{{url_for('get_a_piece', clo_id=clo._id)}}" class="btn card-title text-secondary">{{clo.title}}</a>
                     </div>
                     <div class="col-sm-4">
                         <a href="{{url_for('edit_clothes', clo_id=clo._id)}}" class="edbtn btn btn-info"><i class="fas fa-pencil-alt"></i></a>
@@ -93,9 +92,6 @@
                     </div>
                 </div>
             </h2>
-            <div id="c{{clo._id}}" class="collapse">
-                <p class="card-text">{{clo.description}}</p>
-            </div>
         </div>
     </div>
     {% endfor %}
