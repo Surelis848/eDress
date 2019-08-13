@@ -33,6 +33,7 @@ Also, in the planning stage, I created these wireframes. Although, the design an
 <h3>Features Left to Implement</h3>
 <ul>
 <li>Messaging functionality between the users;</li>
+<li>Reviews & ratings</li>
 <li>Male/ female/ kids/ universal categories.</li>
 </ul>
 <h2>Technologies Used</h2>
@@ -48,6 +49,8 @@ Also, in the planning stage, I created these wireframes. Although, the design an
 <li><strong><a href="https://fonts.google.com/">Google Fonts</a></strong>- font 'Poppins' used as the main font of the page;</li>
 <li><strong><a href="https://fontawesome.com/">FontAwesome</a></strong>- for icons;</li>
 </ul>
+
+<h2>CRUD</h2>
 
 <h2>Testing</h2>
 <h4>Manual testing:</h4>
@@ -94,6 +97,7 @@ Help from tutorials:
 <ul>
 <li><a href="https://pythonspot.com/login-authentication-with-flask/">Python Tutorials</a></li>
 <li><a href="https://www.youtube.com/watch?v=vVx1737auSE">Pretty Printed on Youtube</a></li>
+<li><a href='https://stackoverflow.com/users/520857/populus'>Populus from Stackoverflow - help with pagination</a></li>
 </ul>
 <strong>Tab icon</strong><br>
 Made by <a href"www.flaticon.com">Freepik</a>
