@@ -1,15 +1,29 @@
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 function typeFunction() {
-  document.getElementById("typeDropdown").classList.toggle("show");
+  document.getElementById("typeDropdown").classList.add("show");
 }
 
 function sizeFunction() {
-  document.getElementById("sizeDropdown").classList.toggle("show");
+  document.getElementById("sizeDropdown").classList.add("show");
 }
 
 function colorFunction() {
-  document.getElementById("colorDropdown").classList.toggle("show");
+  document.getElementById("colorDropdown").classList.add("show");
+}
+
+/*When the user chooses the filter, hide the dropdown */
+
+function typeFunctione() {
+  document.getElementById("typeDropdown").classList.remove("show");
+}
+
+function sizeFunctione() {
+  document.getElementById("sizeDropdown").classList.remove("show");
+}
+
+function colorFunctione() {
+  document.getElementById("colorDropdown").classList.remove("show");
 }
 
 filterSelection("all")

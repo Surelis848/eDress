@@ -7,7 +7,7 @@
                 <button onclick="typeFunction()" class="dropbtn card-title">Type</button>
                 <div id="typeDropdown" class="dropdown-content card-text">
                     {% for t in types %}
-                    <a href="#" value="{{t.type}}" onclick="filterSelection('{{t.type}}')">{{t.type}}</a> {% endfor %}
+                    <a href="#" value="{{t.type}}" onclick="typeFunctione(); filterSelection('{{t.type}}');">{{t.type}}</a> {% endfor %}
                 </div>
             </div>
         </div>
@@ -16,7 +16,7 @@
                 <button onclick="sizeFunction()" class="dropbtn card-title">Size</button>
                 <div id="sizeDropdown" class="dropdown-content card-text">
                     {% for s in sizes %}
-                    <a href="#" value="{{s.size}}" onclick="filterSelection('{{s.size}}')">{{s.size}}</a> {% endfor %}
+                    <a href="#" value="{{s.size}}" onclick="filterSelection('{{s.size}}'); sizeFunctione();">{{s.size}}</a> {% endfor %}
                 </div>
             </div>
         </div>
@@ -25,7 +25,7 @@
                 <button onclick="colorFunction()" class="dropbtn card-title">Color</button>
                 <div id="colorDropdown" class="dropdown-content card-text">
                     {% for c in colors %}
-                    <a href="#" value="{{c.color}}" onclick="filterSelection('{{c.color}}')">{{c.color}}</a> {% endfor %}
+                    <a href="#" value="{{c.color}}" onclick="filterSelection('{{c.color}}'); colorFunctione();">{{c.color}}</a> {% endfor %}
                 </div>
             </div>
         </div>
