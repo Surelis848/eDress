@@ -1,4 +1,8 @@
 {% extends 'base.html'%} {% block content %}
+
+<!--Edit clothes form-->
+<!--Auto generate previous results of the piece of clothing from mongodb for editing-->
+
 <div class="row">
     <form action="{{ url_for('update_clothes', clo_id=clothes._id) }}" method="POST" class="col-sm-12">
         <fieldset>
@@ -6,7 +10,6 @@
             <div class="form-group">
                 <label>Username</label>
                 <input type="text" name="username" class="form-control" placeholder="Username" value="{{clothes.username}}">
-                <!-- auto generate -->
             </div>
             <div class="form-group">
                 <label>Title</label>
@@ -16,6 +19,9 @@
                 <label>Type</label>
                 <select class="form-control" name="type">
                 <option disabled selected required>Choose type</option>
+                
+                <!--Auto generate types from database-->
+                
                 {% for t in types %}
                     {% if t.type == clothes.type%}
                        <option value="{{t.type}}" selected >{{t.type}}</option>
@@ -28,6 +34,9 @@
             <div class="form-group">
                 <label>Condition</label>
                 <select multiple="" class="form-control" name="condition">
+                    
+                    <!--Auto generate conditions from database-->
+                    
                     {% for c in conditions %}
                         {% if c.condition == clothes.condition%}
                            <option value="{{c.condition}}" selected >{{c.condition}}</option>
@@ -41,6 +50,9 @@
                 <label>Size</label>
                 <select class="form-control" name="size">
                     <option disabled selected required>Choose size</option>
+                    
+                    <!--Auto generate sizes from database-->
+                    
                     {% for s in sizes %}
                         {% if s.size == clothes.size%}
                            <option value="{{s.size}}" selected >{{s.size}}</option>
@@ -62,6 +74,9 @@
                 <label>Color</label>
                 <select class="form-control" name="color">
                     <option disabled selected required>Choose color</option>
+                    
+                    <!--Auto generate colors from database-->
+                    
                     {% for c in colors %}
                         {% if c.color == clothes.color%}
                            <option value="{{c.color}}" selected >{{c.color}}</option>

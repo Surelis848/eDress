@@ -19,30 +19,42 @@ mongo = PyMongo(app)
 
 @app.route('/')
 
-@app.route('/login', methods=['POST', 'GET'])
-def login():
-    if request.method == 'POST':
-        users = mongo.db.users
-        login_user = users.find_one({'name': request.form['username']})
-        if login_user:
-            if bcrypt.hashpw(request.form['password'].encode('utf-8'), login_user['password'].encode('utf-8')) == login_user['password'].encode('utf-8'):
-                session['username'] = request.form['username']
-                return redirect(url_for('get_clothes'))
-        return 'Invalid username/password combination'
-    return render_template("login.html")
+#Login/register functionality
+
+#@app.route('/login', methods=['POST', 'GET'])
+#def login():
+    #if request.method == 'POST':
+        #users = mongo.db.users
+       # login_user = users.find_one({'name': request.form['username']})
         
-@app.route('/register', methods=['POST', 'GET'])
-def register():
-    if request.method == 'POST':
-        users = mongo.db.users
-        existing_user = users.find_one({'name': request.form['username']})
-        if existing_user is None:
-            hashpass = bcrypt.hashpw(request.form['password'].encode('utf-8'), bcrypt.gensalt())
-            users.insert({'name': request.form['username'], 'password' : hashpass})
-            session['username'] = request.form['username']
-            return redirect(url_for('get_clothes'))
-        return 'That username already exists!'
-    return render_template('register.html')
+ #       password = request.form['password']
+ #       password = bytes(password, 'utf-8')
+ #       hashed = login_user['password']
+            
+ #       if login_user:
+  #          if bcrypt.checkpw(password, hashed):
+ #               session['username'] = request.form['username']
+ #               return redirect(url_for('get_clothes'))
+  #      return 'Invalid username/password combination'
+#    return render_template("login.html")
+        
+#@app.route('/register', methods=['POST', 'GET'])
+#def register():
+  #  if request.method == 'POST':
+    #    users = mongo.db.users
+    #    existing_user = users.find_one({'name': request.form['username']})
+   #     if existing_user is None:
+   #         password = request.form['password']
+   #         password = bytes(password, 'utf-8')
+   #         hashpass = bcrypt.hashpw(password, bcrypt.gensalt())
+   #         users.insert({'name': request.form['username'], 'password' : hashpass})
+    #        session['username'] = request.form['username']
+     #       return redirect(url_for('get_clothes'))
+      #  return 'That username already exists!'
+#    return render_template('register.html')
+    
+# Get the clothes from database and display them in the main page
+#Receive types, colors and sizes from mongodb for filters
     
 @app.route('/get_clothes')
 def get_clothes():
@@ -53,14 +65,19 @@ def get_clothes():
                                             colors=mongo.db.colors.find())
 
         
-@app.route("/logout")
-def logout():
-    session['logged_in'] = False
-    return render_template('')
+#@app.route("/logout")
+#def logout():
+    #session['logged_in'] = False
+    #return render_template('')
+    
+#Get About page    
     
 @app.route('/get_about')
 def get_about():
     return render_template("about.html")
+    
+#Get 'Add Clothes' form 
+#Receive types, conditions, sizes and colors from mongodb
     
 @app.route('/add_clothes')
 def add_clothes():
@@ -70,7 +87,9 @@ def add_clothes():
                                 sizes=mongo.db.sizes.find(),
                                 colors=mongo.db.colors.find()
                                 )
-    
+
+#Take elements from the filled form and insert them into mongodb
+
 @app.route('/insert_clothes', methods=['POST'])
 def insert_clothes():
     clothes =  mongo.db.clothes
@@ -90,6 +109,8 @@ def insert_clothes():
     clothes.insert(add_item)
     return redirect(url_for('get_clothes'))
     
+#Get edit clothes form with filled elements from mongob    
+    
 @app.route('/edit_clothes/<clo_id>')
 def edit_clothes(clo_id):
     the_clo =  mongo.db.clothes.find_one({"_id": ObjectId(clo_id)})
@@ -98,6 +119,8 @@ def edit_clothes(clo_id):
                                             conditions=mongo.db.conditions.find(),
                                             sizes=mongo.db.sizes.find(),
                                             colors=mongo.db.colors.find())
+
+#Take elements from the filled form and update them in mongodb
     
 @app.route('/update_clothes/<clo_id>', methods=["POST"])
 def update_clothes(clo_id):
@@ -117,15 +140,21 @@ def update_clothes(clo_id):
     })
     return redirect(url_for('get_clothes'))
     
+#Delete clothes element from the database    
+    
 @app.route('/delete_clothes/<clo_id>')
 def delete_clothes(clo_id):
     mongo.db.clothes.remove({'_id': ObjectId(clo_id)})
     return redirect(url_for('get_clothes'))
     
+#Render template for a separate piece of clothing    
+    
 @app.route('/get_a_piece/<clo_id>')
 def get_a_piece(clo_id):
     the_clo =  mongo.db.clothes.find_one({"_id": ObjectId(clo_id)})
     return render_template("apiece.html", clothes=the_clo)
+    
+#Main function for running the app    
     
 if __name__ == "__main__":
         app.secret_key = 'mysecret',

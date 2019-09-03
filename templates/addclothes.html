@@ -1,11 +1,13 @@
 {% extends 'base.html'%} {% block content %}
+
+<!--Add clothes form-->
+
 <div class="row">
     <form action="{{ url_for('insert_clothes') }}" method="POST" class="form-center bg-light">
         <fieldset>
             <h2 class='text-secondary'><i class="fas fa-plus-circle"></i> Add A Piece To Your Wardrobe</h2>
             <div class="form-group">
                 <label>Username</label>
-                <!--auto generate -->
                 <input type="text" name="username" class="form-control" placeholder="Username">
             </div>
             <div class="form-group">
@@ -16,6 +18,9 @@
                 <label>Type</label>
                 <select class="form-control" name="type">
                     <option disabled selected required>Choose type</option>
+                    
+                    <!--Auto generate types from database-->
+                    
                     {% for t in types %}
                         <option value="{{t.type}}">{{t.type}}</option>
                     {% endfor %}
@@ -24,6 +29,9 @@
             <div class="form-group">
                 <label>Condition</label>
                 <select multiple="" class="form-control" name="condition" required>
+                    
+                    <!--Auto generate conditions from database-->
+                    
                     {% for c in conditions %}
                         <option value="{{c.condition}}">{{c.condition}}</option>
                     {% endfor %}
@@ -33,6 +41,9 @@
                 <label>Size</label>
                 <select class="form-control" name="size">
                     <option disabled selected required>Choose size</option>
+                    
+                    <!--Auto generate sizes from database-->
+                    
                     {% for s in sizes %}
                         <option value="{{s.size}}">{{s.size}}</option>
                     {% endfor %}
@@ -50,6 +61,9 @@
                 <label>Color</label>
                 <select class="form-control" name="color">
                     <option disabled selected required>Choose color</option>
+                    
+                    <!--Auto generate colors from database-->
+                    
                     {% for c in colors %}
                         <option value="{{c.color}}">{{c.color}}</option>
                     {% endfor %}

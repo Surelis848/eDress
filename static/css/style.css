@@ -54,6 +54,12 @@ footer {
     width: 180px;
 }
 
+.card-body {
+    padding-left: 30px;
+    padding-bottom: 0;
+    padding-top: 10px;
+}
+
 .edbtn {
     height: 30px;
     width: 30px;
