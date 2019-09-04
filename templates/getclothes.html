@@ -1,34 +1,5 @@
 {% extends 'base.html'%} {% block content %}
 <div class="row">
-    <!--<div class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Filter</a>
-        <div class="dropdown-menu ml-auto" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 42px, 0px); top: 0px; left: 0px; will-change: transform;">
-            <div class="card-body dropdown dropdown-item">
-                <button onclick="typeFunction()" class="dropbtn card-title">Type</button>
-                <div id="typeDropdown" class="dropdown-content card-text">
-                    {% for t in types %}
-                    <a href="#" value="{{t.type}}" onclick="typeFunctione(); filterSelection('{{t.type}}');">{{t.type}}</a> {% endfor %}
-                </div>
-            </div>
-            <div class="card-body dropdown dropdown-item">
-                <button onclick="sizeFunction()" class="dropbtn card-title">Size</button>
-                <div id="sizeDropdown" class="dropdown-content card-text">
-                    {% for s in sizes %}
-                    <a href="#" value="{{s.size}}" onclick="filterSelection('{{s.size}}'); sizeFunctione();">{{s.size}}</a> {% endfor %}
-                </div>
-            </div>
-            <div class="card-body dropdown dropdown-item">
-                <button onclick="colorFunction()" class="dropbtn card-title">Color</button>
-                <div id="colorDropdown" class="dropdown-content card-text">
-                    {% for c in colors %}
-                    <a href="#" value="{{c.color}}" onclick="filterSelection('{{c.color}}'); colorFunctione();">{{c.color}}</a> {% endfor %}
-                </div>
-            </div>
-            <div class="card-body dropdown dropdown-item">
-                <button class='reset-btn' value="Refresh Page" onClick="window.location.reload();">Reset</button>
-            </div>
-        </div>
-    </div>-->
 
 <!--Calling filter functions-->
 
