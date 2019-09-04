@@ -10,18 +10,17 @@ eDress is a website born from an idea of saving money as well as Earth, reusing 
 
 <h2>UX</h2>
 The website was made for people who want to change their fashion fast but don't want to buy so many new clothes or go to the stores. Also for somebody who wants to save some money and be a part of recycling.<br><br>
-These user stories were made durring planning stage and were used in creating different features for the website:<br>
+These user stories were made during planning stage and were used in creating different features for the website:<br>
 <ul>
 <li>As a woman, I have a lot of clothes I don't use and would love to change them into something interesting instead of just throwing them out or bringing them to charity.</li>
 <li>As a teenager, I am interested in having new clothes to go with fashion but don't have enough space in my closet so, I'd like to exchange them to new ones.</li>
 <li>As a starting dizainer, I like to experiment with clothes to make them interesting but it can get expensive quickly so I'd prefer exchanging my made clothes for new ones and getting some feedback.</li>
 <li>As a minimalist, I'd like to gift my clothes to both free some space and save on money by exchanging them to other clothes instead of buying new ones.</li>
 </ul>
-Also, in the planning stage, I created these wireframes. Although, the design and some features changed over the development process.
+Also, in the planning stage, I created <a href='#'>these</a> wireframes. Although, the design and some features changed over the development process.
 
 <h2>Features</h2>
 <ul>
-<li>Login and register functionality</li>
 <li>Home page with displayed available clothes for exchange</li>
 <li>Edit and Delete Clothes functionality for the clothes you added</li>
 <li>Each piece page with info about it</li>
@@ -32,7 +31,9 @@ Also, in the planning stage, I created these wireframes. Although, the design an
 
 <h3>Features Left to Implement</h3>
 <ul>
-<li>Messaging functionality between the users;</li>
+<li>Login and register functionality</li>
+<li>Messaging functionality between the users</li>
+<li>'I want this' button to notify the user if someone wants to do an exchange</li>
 <li>Reviews & ratings</li>
 <li>Male/ female/ kids/ universal categories.</li>
 </ul>
@@ -51,6 +52,12 @@ Also, in the planning stage, I created these wireframes. Although, the design an
 </ul>
 
 <h2>CRUD</h2>
+<ul>
+<li><strong>Create</strong>- 'Add Clothes' form where you add your pieces to the database</li>
+<li><strong>Read (Retrieve)</strong>- get the clothes diplayed in the home page from the database</li>
+<li><strong>Update</strong>- you can update each piece of clothing in the database by pressing the 'edit' button</li>
+<li><strong>Delete</strong>- you can delete each piece from the database by pressing the 'delete' button</li>
+</ul>
 
 <h2>Testing</h2>
 <h4>Manual testing:</h4>
@@ -68,16 +75,14 @@ Also, in the planning stage, I created these wireframes. Although, the design an
 <li>Microsoft Edge</li>
 <li>Safari</li>
 </ul>
-<h2>Bugs:</h2>
-
-When the graphs are viewed on a smaller device, the graphs shrink and the x axis and y axis in the line chart as well as the row chart starts to be unreadable without zooming the screen in.
-Other manual testing:
-
-If the 'Reset All' button is clicked all of the charts will be rendered again;
-When selecting a specific category, country, state, etc. other charts are rendered according to the users choice.
+<h2>Known bugs:</h2>
+<ul>
+<li>Dropdown list for filters dissapears only if you choose or press on the button again. It does not disspear by pressing outside of the list</li>
+<li></li>
+</ul>
 
 <h2>Deployment</h2>
-The website was started in the c9 environment and later on transfered and finished in AWS Cloud9. All biger changes were pushed to the staging area and later on pushed to GitHub and Heroku sites.<br>
+The website was started in the c9 environment and later on transfered and finished in AWS Cloud9. All bigger changes were pushed to the staging area and later on pushed to GitHub and Heroku sites.<br>
 Heroku was used to host this project. The following method has been used to achieve a good deployment:
 <ol>
 <li>Set up the initial app</li>
