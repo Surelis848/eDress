@@ -2,7 +2,7 @@
 eDress is an online platform for exchanging your clothes with other members. 
 If you are bored of your wardrobe and want some new catchy pieces but can't afford it, here you can change your clothes with somebody else for free.
 <br>This website was made as a project for Code Institute.
-<br>To view the live site press <a href="{{url_for('static', filename='wireframes/wireframes.pdf')}}">HERE</a>
+<br>To view the live site press <a href="https://edress-project.herokuapp.com/">HERE</a>
 <h2>How Does It Work?</h2>
 It's as simple as you uploading the information and images of your clothes and then when you have something to show you go roam the dashboard of the clothes already there from other users. When you find something you like, you communicate with them if they would like anything from your collection and if yes, then you exchange addresses and send the piece of clothing for each other. It's as simple as that!
 <h2>Idea and goals of the website</h2>
@@ -17,7 +17,7 @@ These user stories were made during planning stage and were used in creating dif
 <li>As a starting dizainer, I like to experiment with clothes to make them interesting but it can get expensive quickly so I'd prefer exchanging my made clothes for new ones and getting some feedback.</li>
 <li>As a minimalist, I'd like to gift my clothes to both free some space and save on money by exchanging them to other clothes instead of buying new ones.</li>
 </ul>
-Also, in the planning stage, I created <a href='#'>these</a> wireframes. Although, the design and some features changed over the development process.
+Also, in the planning stage, I created <a href="{{url_for('static', filename='wireframes/wireframes.pdf')}}">these</a> wireframes. Although, the design and some features changed over the development process.
 
 <h2>Features</h2>
 <ul>
