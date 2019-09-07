@@ -17,7 +17,7 @@ These user stories were made during planning stage and were used in creating dif
 <li>As a starting dizainer, I like to experiment with clothes to make them interesting but it can get expensive quickly so I'd prefer exchanging my made clothes for new ones and getting some feedback.</li>
 <li>As a minimalist, I'd like to gift my clothes to both free some space and save on money by exchanging them to other clothes instead of buying new ones.</li>
 </ul>
-Also, in the planning stage, I created <a href="{{url_for('static', filename='wireframes/wireframes.pdf')}}">these</a> wireframes. Although, the design and some features changed over the development process.
+Also, in the planning stage, I created wireframes for the project which you can view in the wireframes folder. Although, the design and some features changed over the development process.
 
 <h2>Features</h2>
 <ul>
