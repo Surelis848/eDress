@@ -2,7 +2,7 @@
 eDress is an online platform for exchanging your clothes with other members. 
 If you are bored of your wardrobe and want some new catchy pieces but can't afford it, here you can change your clothes with somebody else for free.
 <br>This website was made as a project for Code Institute.
-<br>To view the live site press <a href="#">HERE</a>
+<br>To view the live site press <a href="{{url_for('static', filename='wireframes/wireframes.pdf')}}">HERE</a>
 <h2>How Does It Work?</h2>
 It's as simple as you uploading the information and images of your clothes and then when you have something to show you go roam the dashboard of the clothes already there from other users. When you find something you like, you communicate with them if they would like anything from your collection and if yes, then you exchange addresses and send the piece of clothing for each other. It's as simple as that!
 <h2>Idea and goals of the website</h2>
@@ -21,17 +21,18 @@ Also, in the planning stage, I created <a href='#'>these</a> wireframes. Althoug
 
 <h2>Features</h2>
 <ul>
-<li>Home page with displayed available clothes for exchange</li>
-<li>Edit and Delete Clothes functionality for the clothes you added</li>
+<li>Home page with displayed available clothes</li>
+<li>Edit and Delete Clothes functionalit</li>
 <li>Each piece page with info about it</li>
-<li>My profile page with the clothes I added and my favourites?</li>
 <li>About page for the website</li>
 <li>Add New Clothes functionality</li>
+<li>Pagination for the home page</li>
 </ul>
 
 <h3>Features Left to Implement</h3>
 <ul>
 <li>Login and register functionality</li>
+<li>My Profile page with favourite clothes list</li>
 <li>Messaging functionality between the users</li>
 <li>'I want this' button to notify the user if someone wants to do an exchange</li>
 <li>Reviews & ratings</li>
@@ -43,7 +44,7 @@ Also, in the planning stage, I created <a href='#'>these</a> wireframes. Althoug
 <li><strong><a href="http://www.css3.info/">CSS3</a></strong>- used for the styling of the page;</li>
 <li><strong><a href="https://www.javascript.com/">JavaScript</a> and <a href="https://jquery.com/">jQuery</a></strong> - used for filtering;</li>
 <li><strong><a href="https://www.python.org/">Python3</a></strong> - used for all functionality - CRUD</li>
-<li><strong><a href="https://www.mongodb.com/">MongoDB</a></strong>- for storing the cltohes and users information</li>
+<li><strong><a href="https://www.mongodb.com/">MongoDB</a></strong>- for storing the clothes and users information</li>
 <li><strong><a href="https://www.heroku.com/">Heroku</a></strong>- for deploying the page</li>
 <li><strong><a href="https://getbootstrap.com/">Bootstrap 4</a></strong>- used for styling and layout of the page.</li>
 <li><strong><a href="https://bootswatch.com/minty/">Bootswatch Minty</a></strong>- used as a theme for the page, also card boxes, navigation and form styling;</li>
@@ -78,7 +79,7 @@ Also, in the planning stage, I created <a href='#'>these</a> wireframes. Althoug
 <h2>Known bugs:</h2>
 <ul>
 <li>Dropdown list for filters dissapears only if you choose or press on the button again. It does not disspear by pressing outside of the list</li>
-<li></li>
+<li>You can choose only one of the filters. You cannot filter by all of them</li>
 </ul>
 
 <h2>Deployment</h2>
@@ -89,6 +90,8 @@ Heroku was used to host this project. The following method has been used to achi
 <li>Link the local Git repository to Heroku.</li>
 <li>Create a requirements.txt file, which contains a list of the project dependencies</li>
 <li>Create a Procfile, the file that tells Heroku how to run the project.</li>
+<li>Logged into Heroku and pushed the files using <i>git push heroku master</i></li>
+<li>Added the config variables to Heroku in the settings option</li>
 </ol>
 
 <h2>Credits</h2>
@@ -97,8 +100,7 @@ All custom written
 <br><br><strong>Pictures</strong><br>
 Advanced search on Google copyright free<br>
 Photo in the About page - by Shanna Camilleri on <a href="https://unsplash.com/">Unsplash</a>
-<br><br><strong>Log In Functionality Code</strong><br>
-Help from tutorials:
+<br><br><strong>Help from tutorials:</strong><br>
 <ul>
 <li><a href="https://pythonspot.com/login-authentication-with-flask/">Python Tutorials</a></li>
 <li><a href="https://www.youtube.com/watch?v=vVx1737auSE">Pretty Printed on Youtube</a></li>
