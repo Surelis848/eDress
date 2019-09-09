@@ -18,44 +18,6 @@ else:
 mongo = PyMongo(app)
 
 @app.route('/')
-
-#Login/register functionality
-
-#@app.route('/login', methods=['POST', 'GET'])
-#def login():
-    #if request.method == 'POST':
-        #users = mongo.db.users
-       # login_user = users.find_one({'name': request.form['username']})
-        
- #       password = request.form['password']
- #       password = bytes(password, 'utf-8')
- #       hashed = login_user['password']
-            
- #       if login_user:
-  #          if bcrypt.checkpw(password, hashed):
- #               session['username'] = request.form['username']
- #               return redirect(url_for('get_clothes'))
-  #      return 'Invalid username/password combination'
-#    return render_template("login.html")
-        
-#@app.route('/register', methods=['POST', 'GET'])
-#def register():
-  #  if request.method == 'POST':
-    #    users = mongo.db.users
-    #    existing_user = users.find_one({'name': request.form['username']})
-   #     if existing_user is None:
-   #         password = request.form['password']
-   #         password = bytes(password, 'utf-8')
-   #         hashpass = bcrypt.hashpw(password, bcrypt.gensalt())
-   #         users.insert({'name': request.form['username'], 'password' : hashpass})
-    #        session['username'] = request.form['username']
-     #       return redirect(url_for('get_clothes'))
-      #  return 'That username already exists!'
-#    return render_template('register.html')
-    
-# Get the clothes from database and display them in the main page
-#Receive types, colors and sizes from mongodb for filters
-    
 @app.route('/get_clothes')
 def get_clothes():
     return render_template("getclothes.html", 
@@ -64,12 +26,6 @@ def get_clothes():
                                             sizes=mongo.db.sizes.find(),
                                             colors=mongo.db.colors.find())
 
-        
-#@app.route("/logout")
-#def logout():
-    #session['logged_in'] = False
-    #return render_template('')
-    
 #Get About page    
     
 @app.route('/get_about')
