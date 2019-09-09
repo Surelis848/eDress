@@ -45,6 +45,11 @@ footer {
 
 /*-------------Home Page-------------*/
 
+.card {
+    width: 100%;
+    height: 95%;
+}
+
 .card-header {
     text-align: center;
 }
@@ -133,7 +138,6 @@ footer {
     float: left;
     background-color: #2196F3;
     color: #ffffff;
-    width: 100px;
     line-height: 100px;
     text-align: center;
     margin: 2px; 
