@@ -17,7 +17,7 @@ else:
     app.config["MONGO_URI"] = config.DB_CONFIG["MONGO_URI"]
 
 mongo = PyMongo(app)
-clothes = list(range(100))
+clothes = mongo.db.clothes.find()
 
 def get_clothing(offset=0, per_page=10):
     return clothes[offset: offset + per_page]
@@ -27,7 +27,7 @@ def get_clothing(offset=0, per_page=10):
 def get_clothes():
     page, per_page, offset = get_page_args(page_parameter='page',
                                            per_page_parameter='per_page')
-    total = len(clothes)
+    total = clothes.count()
     pagination_clothes = get_clothing(offset=offset, per_page=per_page)
     pagination = Pagination(page=page, per_page=per_page, total=total,
                             css_framework='bootstrap4')
