@@ -3,6 +3,7 @@ from datetime import datetime
 from flask import Flask, render_template, redirect, request, url_for, session, flash, abort
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from flask_paginate import Pagination, get_page_args
 import bcrypt
 
 
@@ -16,13 +17,27 @@ else:
     app.config["MONGO_URI"] = config.DB_CONFIG["MONGO_URI"]
 
 mongo = PyMongo(app)
+clothes = list(range(100))
+
+def get_clothing(offset=0, per_page=10):
+    return clothes[offset: offset + per_page]
 
 @app.route('/')
 @app.route('/get_clothes')
 def get_clothes():
+    page, per_page, offset = get_page_args(page_parameter='page',
+                                           per_page_parameter='per_page')
+    total = len(clothes)
+    pagination_clothes = get_clothing(offset=offset, per_page=per_page)
+    pagination = Pagination(page=page, per_page=per_page, total=total,
+                            css_framework='bootstrap4')
     return render_template("getclothes.html", 
                                             clothes=mongo.db.clothes.find().sort('date', -1),
                                             types=mongo.db.types.find(),
+                                            users=pagination_clothes,
+                                            page=page,
+                                            per_page=per_page,
+                                            pagination=pagination,
                                             sizes=mongo.db.sizes.find(),
                                             colors=mongo.db.colors.find())
 
