@@ -34,7 +34,7 @@ def get_clothes():
     return render_template("getclothes.html", 
                                             clothes=mongo.db.clothes.find().sort('date', -1),
                                             types=mongo.db.types.find(),
-                                            users=pagination_clothes,
+                                            theclothes=pagination_clothes,
                                             page=page,
                                             per_page=per_page,
                                             pagination=pagination,
