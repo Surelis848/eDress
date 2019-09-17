@@ -17,24 +17,24 @@ else:
     app.config["MONGO_URI"] = config.DB_CONFIG["MONGO_URI"]
 
 mongo = PyMongo(app)
-clothes = mongo.db.clothes.find()
+theclothes = mongo.db.clothes.find()
 
 def get_clothing(offset=0, per_page=10):
-    return clothes[offset: offset + per_page]
+    return theclothes[offset: offset + per_page]
 
 @app.route('/')
 @app.route('/get_clothes')
 def get_clothes():
     page, per_page, offset = get_page_args(page_parameter='page',
                                            per_page_parameter='per_page')
-    total = clothes.count()
+    total = theclothes.count()
     pagination_clothes = get_clothing(offset=offset, per_page=per_page)
     pagination = Pagination(page=page, per_page=per_page, total=total,
                             css_framework='bootstrap4')
     return render_template("getclothes.html", 
                                             clothes=mongo.db.clothes.find().sort('date', -1),
                                             types=mongo.db.types.find(),
-                                            theclothes=pagination_clothes,
+                                            clothing=pagination_clothes,
                                             page=page,
                                             per_page=per_page,
                                             pagination=pagination,
