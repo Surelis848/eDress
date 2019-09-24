@@ -18,6 +18,7 @@ else:
 
 mongo = PyMongo(app)
 
+#Home Page and Pagination
 
 def get_clothing(offset=0, per_page=10):
     theclothes = mongo.db.clothes.find().sort('date', -1)
@@ -40,6 +41,21 @@ def get_clothes():
                                             pagination=pagination,
                                             sizes=mongo.db.sizes.find(),
                                             colors=mongo.db.colors.find())
+                                            
+#Filter results out
+                   
+@app.route('/get_filtered/<thetype>')
+def get_filtered(thetype):
+    clothes=mongo.db.clothes
+    type=clothes.find({'type': thetype})
+    # size=clothes.find({'size': thesize})
+    # color=clothes.find({'color': thecolor})
+    
+    return render_template("getfiltered.html",  type=type,
+                                                types=mongo.db.types.find(),
+                                                sizes=mongo.db.sizes.find(),
+                                                colors=mongo.db.colors.find())
+
 #Get About page    
     
 @app.route('/get_about')
