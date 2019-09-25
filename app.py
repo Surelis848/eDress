@@ -21,7 +21,7 @@ mongo = PyMongo(app)
 #Home Page and Pagination
 
 def get_clothing(offset=0, per_page=10):
-    theclothes = mongo.db.clothes.find().sort('date', -1)
+    theclothes = mongo.db.clothes.find().sort('_id', -1)
     return theclothes[offset: offset + per_page]
 
 @app.route('/')
