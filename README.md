@@ -63,7 +63,7 @@ Also, in the planning stage, I created wireframes for the project which you can 
 <h2>CRUD</h2>
 <ul>
 <li><strong>Create</strong>- 'Add Clothes' form where you add your pieces to the database</li>
-<li><strong>Read (Retrieve)</strong>- get the clothes diplayed in the home page from the database</li>
+<li><strong>Read/Retrieve</strong>- get the clothes diplayed in the home page from the database</li>
 <li><strong>Update</strong>- you can update each piece of clothing in the database by pressing the 'edit' button</li>
 <li><strong>Delete</strong>- you can delete each piece from the database by pressing the 'delete' button</li>
 </ul>
