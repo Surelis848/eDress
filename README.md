@@ -25,22 +25,22 @@ Also, in the planning stage, I created wireframes for the project which you can 
 
 <h2>Features</h2>
 <ul>
-<li>Home page with displayed available clothes</li>
-<li>Edit and Delete Clothes functionality</li>
-<li>Each piece page with info about it</li>
-<li>About page for the website</li>
-<li>Add New Clothes functionality</li>
-<li>Pagination for the home page</li>
-<li>Filters for different clothes <i>(bug)</i></li>
+<li>Home page with displayed available clothes;</li>
+<li>Edit and Delete clothes functionality;</li>
+<li>Each piece page with info about it;</li>
+<li>About page for the website;</li>
+<li>Add New clothes functionality;</li>
+<li>Pagination for the home page;</li>
+<li>Filters for different clothes <i>(bug)</i>.</li>
 </ul>
 
 <h3>Features Left to Implement</h3>
 <ul>
-<li>Login and register functionality</li>
-<li>My Profile page with favourite clothes list</li>
-<li>Messaging functionality between the users</li>
-<li>'I want this' button to notify the user if someone wants to do an exchange</li>
-<li>Reviews & ratings</li>
+<li>Login and register functionality;</li>
+<li>My Profile page with favourite clothes list;</li>
+<li>Messaging functionality between the users;</li>
+<li>'I want this' button to notify the user if someone wants to do an exchange;</li>
+<li>Reviews & ratings;</li>
 <li>Male/ female/ kids/ universal categories.</li>
 </ul>
 <h2>Technologies Used</h2>
@@ -68,6 +68,15 @@ Also, in the planning stage, I created wireframes for the project which you can 
 <li><strong>Delete</strong>- you can delete each piece from the database by pressing the 'delete' button</li>
 </ul>
 
+<h2>Database</h2>
+<p>For my project I used MongoDB database (Relational).This project's database includes such collections:
+<li>Types</li>
+<li>Conditions</li>
+<li>Colors</li>
+<li>Sizes</li>
+<li>Clothes (containing such elements as id, color, description, brand, type, size, condition, date(uploaded), composition, picture and title)</li>
+</p>
+
 <h2>Testing</h2>
 <h4>Manual testing:</h4>
 <h4>Validating:</h4>
@@ -79,16 +88,16 @@ Also, in the planning stage, I created wireframes for the project which you can 
 <ul>
 <li>Google Chrome</li>
 <li>Internet Explorer</li>
-<li>Mozilla Firefox</li>
-<li>Opera Browser</li>
+<li>.Mozilla Firefox</li>
+<li>.Opera Browser</li>
 <li>Microsoft Edge</li>
-<li>Safari</li>
+<li>.Safari</li>
 </ul>
 <h2>Known bugs:</h2>
 <ul>
 <li>Dropdown list for filters dissapears only if you choose or press on the button again. It does not disspear by pressing outside of the list</li>
 <li>You can choose only one of the filters. You cannot filter by all of them</li>
-<li>You can see second page over the filter after filtering the results</li>
+<li>You can see second page icon over the filter after filtering the results</li>
 <li>Clothes when filtered are displayed in a random manner through the page due to 'show' and 'hide functionality used while making the filters. Have to fix that later on by creating a new page for filtered elements.</li>
 </ul>
 
@@ -104,15 +113,6 @@ Heroku was used to host this project. The following method has been used to achi
 <li>Added the config variables to Heroku in the settings option</li>
 </ol>
 
-<h2>Database</h2>
-<p>For my project I used MongoDB database (NoSQL).This project's database includes such collections:
-<li>Types:</li>
-<li>Conditions</li>
-<li>Colors</li>
-<li>Sizes</li>
-<li>Clothes (containing such elements as id, color, description, brand, type, size, condition, date(uploaded), composition, picture and title)</li>
-</p>
-
 <h2>Credits</h2>
 <strong>Content</strong><br>
 All custom written
@@ -125,7 +125,7 @@ Photo in the About page - by Shanna Camilleri on <a href="https://unsplash.com/"
 <li><a href="https://www.youtube.com/watch?v=vVx1737auSE">Pretty Printed on Youtube</a></li>
 <li><a href='https://stackoverflow.com/users/520857/populus'>Populus from Stackoverflow - help with pagination</a></li>
 </ul>
-<<strong>Tab icon</strong><br>
+<strong>Tab icon</strong><br>
 Made by <a href"www.flaticon.com">Freepik</a>
 <br><br><strong>Extra help</strong><br>
 Big thank you for my mentor <a href='https://github.com/tonkec'>Antonija Simic</a> and tutors on Code institute
