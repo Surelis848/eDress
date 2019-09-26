@@ -6,7 +6,7 @@ If you are bored of your wardrobe and want some new catchy pieces but can't affo
 <h2>Idea and goals of the website</h2>
 The website allows to add your clothes to the database, edit and delete them. It displays all the results in the home page.<br>
 eDress is a website born from an idea of saving money as well as Earth, reusing and reducing the influence of huge brands and corporations using second-world countries and their people for their benefit without giving them equal right. More about the ideas eDress is based on you can find by watching a movie <a href="https://truecostmovie.com/">"True Cost"</a>
-<h2>Hopes for the websites future</h2>
+<h2>Hopes for the website's future</h2>
 Later on I want to implement user login functionality and ability to communicate with other users about clothes you want to exchange.
 
 <h2>UX</h2>
